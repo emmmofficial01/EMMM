@@ -1,0 +1,13 @@
+emmm-official-website/
+│
+├── admin/
+│   ├── config.yml
+│   └── index.html
+│
+├── netlify/
+│   └── functions/
+│       └── .gitkeep
+│
+├── netlify.toml
+│
+└── index.html
