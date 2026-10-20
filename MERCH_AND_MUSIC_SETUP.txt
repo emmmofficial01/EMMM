@@ -1,0 +1,7 @@
+EMMM WEBSITE: MERCH SIGNUP + MUSIC
+
+1. Deploy this folder using Netlify connected to GitHub. Netlify Forms should detect the re3elz-merch-alerts form during deployment. Check Site > Forms for submissions and configure email notifications in Netlify. Form detection and availability depend on your Netlify plan/settings.
+2. Subscribing stores an email submission in Netlify when deployed properly; it does NOT automatically send a launch campaign. Export contacts or connect an email marketing service and send launch messages only to consenting subscribers. Include unsubscribe controls in marketing emails.
+3. Opening index.html locally will NOT save Netlify form submissions. Test on the deployed Netlify website.
+4. Music uses an official Spotify artist embed on the homepage. Browsers block unprompted audible autoplay. Visitors must click play; Spotify determines whether any play qualifies as a stream. Direct MP3 background audio does not count as a Spotify or Apple Music stream.
+5. EMMM’S CRIB contact is on the Crib page and the main Bookings page.

@@ -1,0 +1,16 @@
+EMMM WEBSITE V2 — TEN IMPROVEMENTS
+
+1 Homepage: new booking/EMMMPIRE actions and achievements spotlight.
+2 Admin: /admin/ Decap CMS scaffolding. NOT READY FOR LOGIN until GitHub OAuth is configured. Replace YOUR_GITHUB_USERNAME in admin/config.yml and set up a trusted OAuth provider; never expose credentials. Editing JSON directly in GitHub also works immediately.
+3 Music: release.html?name=WET and links to platform searches. Replace with verified direct links when available.
+4 EMMMPIRE: original event archive/flyers preserved.
+5 CRIB: original episode details preserved and CMS-managed extra episodes supported.
+6 RE3ELZ: merch signup form preserved; activate Netlify Forms and email marketing integration to notify subscribers.
+7 Bookings: three-brand Netlify booking inquiry form. After deploy, enable/check form detection and test submissions in Netlify.
+8 Press: achievements spotlight and EPK preserved. Verify billing before calling all artists opening performances.
+9 Mobile: hamburger navigation, responsive booking form, keyboard focus and reduced motion.
+10 SEO/analytics: page descriptions preserved, robots.txt and optional privacy-conscious analytics integration can be added after deployment. No analytics tracking installed without consent/selection.
+
+To deploy: unzip, push files to a private GitHub repo, import into Netlify, publish directory . and no build command. Verify form submission, images, and navigation on mobile. Do not upload private music MP3s.
+
+Admin CMS notes: /admin is a prepared interface, not a working secure account until OAuth is configured. It writes site-content.json; the public pages read that file for new content. Original hardcoded entries remain; changing those requires editing existing HTML or migrating them to JSON.

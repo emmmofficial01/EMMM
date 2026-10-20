@@ -1,0 +1,11 @@
+EMMM NEWS DISCOVERY + APPROVAL
+
+This is a REVIEW-FIRST workflow, not an automatic publishing service.
+1. Upload the extracted website files to a GitHub repository (including .github/workflows/news-discovery.yml).
+2. In repository Settings > Actions, allow workflows to run. The daily scheduled workflow discovers potential articles using Google News RSS search. You can also run the workflow manually from Actions.
+3. The workflow writes unapproved suggestions to news-candidates.json. No discovered article appears on your public website automatically.
+4. Download news-candidates.json from GitHub. Open news-review.html locally, select that JSON file, inspect the linked articles, and approve only genuine coverage of the correct brand.
+5. Click Download Approved News File. Upload the resulting news-data.js file to your live website, replacing the previous one. The approved news will then appear in the existing brand news sections.
+6. Repeat when needed. Keep a backup of previously approved news-data.js; this review screen exports only articles from the candidate file you loaded.
+
+LIMITATIONS: Search can return unrelated matches, feeds can change or be unavailable, and scheduled GitHub Actions may be delayed. This does not scrape social media or guarantee finding every update. Automatic publication and persistent editor login would require a hosted backend/CMS. Never publish unverified news.

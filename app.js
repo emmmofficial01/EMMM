@@ -1,0 +1,1 @@
+document.querySelectorAll('nav a').forEach(a=>{if(a.dataset.nav===document.body.dataset.page)a.classList.add('active')});document.querySelectorAll('[data-play]').forEach(b=>b.addEventListener('click',()=>{document.querySelector('#player-info').hidden=false;document.querySelector('#player-info').scrollIntoView({behavior:'smooth'})}));

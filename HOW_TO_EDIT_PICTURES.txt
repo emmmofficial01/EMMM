@@ -1,0 +1,18 @@
+EMMM WEBSITE PICTURE EDITING
+
+VISUAL EDITOR:
+1. Extract this ZIP.
+2. Open editor.html in Chrome or Edge. Choose a page, then click a photo.
+3. Adjust crop, horizontal/vertical position, zoom, or choose a replacement photo.
+4. Click Connect Website Folder, select this extracted folder, then Save Picture Changes.
+5. If folder access is unavailable, click Download Settings File and copy image-settings.js into this folder (overwrite old one). Put any downloaded edited-*.jpg/png files into assets/.
+6. Reload the website. Some browsers restrict editing from file://; if so run a local server from this folder: python -m http.server 8000 then open http://localhost:8000/editor.html
+
+CODE EDITING WITH VS CODE:
+1. Open the extracted website folder in VS Code.
+2. Open image-settings.js. Each entry uses a page name and image index, such as index.html::0.
+3. Change fit (contain or cover), x/y position (0 to 100), zoom (70 to 150), and optional src path.
+4. To replace a photo, add it to assets and update src in image-settings.js.
+5. Save and refresh the browser.
+
+NOTE: Editing is local. To change a published website, upload the modified files to your hosting provider. Keep backups before editing.

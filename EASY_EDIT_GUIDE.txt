@@ -1,0 +1,13 @@
+EMMM EASY CONTENT EDITOR
+
+1. Open content-editor.html in Chrome or Edge.
+2. Select Music release or Event. Fill title, optional artwork path, and direct streaming or event links.
+3. Click Add Item. Add as many as you want.
+4. Click Download Updated content-data.js. Replace the existing file of the same name in the website folder.
+5. Put any new images inside assets/ and use paths such as assets/new-album.jpg.
+6. Refresh index.html, music.html, shows.html or emmmpire.html.
+7. To publish, commit the updated content-data.js and image files to GitHub. Netlify redeploys automatically when connected.
+
+IMPORTANT: The existing WET and SERENADE links on the homepage and Music page currently open platform SEARCH RESULTS, not verified direct releases. Replace these URLs with official release URLs when available.
+
+This editor adds new items, and does not edit or delete the older hard-coded entries.

@@ -1,0 +1,7 @@
+OFFICIAL EVENT FLYERS & PHOTOS
+
+Your original seven flyers are in assets/: crib-episode-1.jpg, crib-episode-2.jpg, crib-episode-3.jpg, barrie-dancehall-2024.jpg, barrie-rooftop-2024.jpg, barrie-oldschool-2026.jpg, barrie-genz-nov14-2026.jpg.
+
+Use editor.html to select Emmmpire or Emmm’s Crib, click a sample gallery photo, choose a replacement and save. If direct folder saving fails, use Download Settings File and copy image-settings.js plus replacement images to the website folder/assets.
+
+The Episode 3 flyer is archived as scheduled/cancelled, not presented as a completed event. Episode 1 flyer displays January 31 (year not provided); Episode 2 flyer displays March 15, 2023.

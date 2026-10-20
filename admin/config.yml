@@ -1,0 +1,52 @@
+# Set up GitHub OAuth for Decap CMS before using the admin dashboard.
+# Replace YOUR_GITHUB_USERNAME and configure an OAuth backend.
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/emmm-official-website
+  branch: main
+media_folder: assets/uploads
+public_folder: /assets/uploads
+publish: true
+collections:
+  - name: content
+    label: Website content
+    files:
+      - name: site
+        label: Music, events, announcements, news and episodes
+        file: site-content.json
+        fields:
+          - {label: Announcement headline, name: announcement, widget: string}
+          - {label: Announcement link, name: announcementLink, widget: string, required: false}
+          - label: Music releases
+            name: releases
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Year, name: year, widget: string, required: false}
+              - {label: Artwork, name: image, widget: image, required: false}
+              - {label: Spotify URL, name: spotify, widget: string, required: false}
+              - {label: Apple Music URL, name: apple, widget: string, required: false}
+              - {label: YouTube URL, name: youtube, widget: string, required: false}
+          - label: Upcoming events
+            name: events
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Date, name: date, widget: string}
+              - {label: Venue, name: venue, widget: string, required: false}
+              - {label: Flyer, name: image, widget: image, required: false}
+              - {label: Ticket URL, name: url, widget: string, required: false}
+          - label: Crib episodes
+            name: episodes
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Artists, name: artists, widget: text}
+              - {label: Flyer, name: image, widget: image, required: false}
+          - label: Published news
+            name: news
+            widget: list
+            fields:
+              - {label: Brand, name: brand, widget: select, options: [EMMM, EMMMPIRE, "EMMM'S CRIB"]}
+              - {label: Headline, name: title, widget: string}
+              - {label: Source URL, name: url, widget: string, required: false}
