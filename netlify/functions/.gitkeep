@@ -1,0 +1,15 @@
+EMMM/
+│
+├── admin/
+│   ├── config.yml
+│   └── index.html
+│
+├── netlify/
+│   └── functions/
+│       └── .gitkeep
+│
+├── assets/
+│
+├── netlify.toml
+│
+└── index.html
