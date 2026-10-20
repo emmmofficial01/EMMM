@@ -46,3 +46,29 @@
 
 /* EMMM v2: accessibility, responsive layout, content studio, booking */
 .nav-toggle{display:none;background:#21151a;color:#fff;border:1px solid #a83a4b;padding:11px 14px;cursor:pointer;font-weight:800}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #ffd07d;outline-offset:3px}.hero-kicker{font-size:17px;color:#f0d1d5}.spotlight,.cms-section,.booking-forms,.release-feature{padding:65px 7%;background:#0e0d10}.spotlight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}.spotlight-grid article{border:1px solid #60404b;padding:24px;background:#1b1318}.spotlight-grid strong{font-size:28px;color:#f0bf67}.spotlight-grid p{line-height:1.6}.booking-forms form{max-width:1000px}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.booking-forms label{display:block;font-weight:700;font-size:13px;margin:12px 0;color:#f5e5e7}.booking-forms input:not([type=checkbox]),.booking-forms select,.booking-forms textarea{width:100%;display:block;background:#171419;color:#fff;border:1px solid #65535b;padding:13px;margin-top:8px;border-radius:3px;font:inherit}.booking-forms .consent{display:flex;gap:10px;align-items:center}.booking-forms button{cursor:pointer}.release-feature{min-height:70vh}.release-links{display:flex;gap:12px;flex-wrap:wrap;margin:25px 0}.release-card-link{color:inherit;text-decoration:none}.release-card-link:hover{color:#ff6478}.cms-section:has(.upgrade-grid:empty){display:none}img{max-width:100%}body{overflow-x:hidden}@media(max-width:1000px){header{flex-wrap:wrap}.nav-toggle{display:block;margin-left:auto}header nav{display:none!important;flex:1 0 100%;flex-direction:column;align-items:stretch;max-height:65vh;overflow:auto;padding:14px;background:#120e12}header nav.nav-open{display:flex!important}header nav a{display:block;padding:11px 8px}}@media(max-width:650px){.spotlight-grid,.form-grid{grid-template-columns:1fr}.spotlight,.cms-section,.booking-forms,.release-feature{padding:44px 6%}.release-links .btn{width:100%;text-align:center}.hero{overflow:hidden}.hero-copy h1{font-size:clamp(70px,19vw,130px)}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* EMMM V2 mobile overflow corrections — 2026-10-20 */
+html,body{max-width:100%;}
+img,video,iframe,svg{max-width:100%;}
+.page,.page-head,main,section,article,.card,.card-body,.split>*,.grid>*,.merch-section>*,.spotlight-grid>*,.form-grid>*,.booking-forms form{min-width:0;}
+p,a,label,small{overflow-wrap:break-word;}
+.merch-signup,.merch-copy{min-width:0;max-width:100%;}
+.merch-signup form{max-width:100%;min-width:0;}
+.merch-signup .check-consent{display:grid;grid-template-columns:22px minmax(0,1fr);align-items:start;gap:12px;width:100%;min-width:0;overflow-wrap:anywhere;}
+.merch-signup .check-consent input[type=checkbox]{width:20px;height:20px;min-width:20px;margin:2px 0 0;padding:0;justify-self:start;align-self:start;}
+.merch-signup input[type=email]{min-width:0;max-width:100%;}
+@media(max-width:750px){
+  header{width:100%;padding:12px 5%;flex-direction:row;align-items:center;justify-content:space-between;gap:10px;}
+  header .logo{font-size:clamp(25px,8vw,34px);letter-spacing:1px;}
+  header .nav-toggle{flex:0 0 auto;margin-left:auto;}
+  header nav{flex-basis:100%;width:100%;min-width:0;}
+  .merch-section{width:auto;max-width:calc(100% - 24px);margin:24px 12px;padding:20px 14px;grid-template-columns:minmax(0,1fr);gap:20px;}
+  .merch-signup{padding:18px 14px;}
+  .merch-signup .check-consent{font-size:13px;line-height:1.6;}
+  .merch-signup .btn{max-width:100%;width:100%;white-space:normal;text-align:center;overflow-wrap:anywhere;margin-right:0;}
+  .page-head h1,.intro h1,.hero h1{overflow-wrap:anywhere;}
+  .spotlight-grid,.form-grid{grid-template-columns:minmax(0,1fr);}
+  .event{min-width:0;}
+}
+@media(max-width:400px){.merch-signup{padding:16px 12px}.merch-section{padding:16px 10px}header .nav-toggle{padding:9px 10px;font-size:12px}}
+
