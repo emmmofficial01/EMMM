@@ -14,11 +14,10 @@ collections:
   - name: content
     label: Website Management
     files:
-
       - name: site
         label: EMMM Website Content
         file: site-content.json
-       fields:
+        fields:
         - label: "🏠 Announcement Headline"
           name: announcement
           widget: string
