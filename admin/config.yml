@@ -18,7 +18,7 @@ collections:
       - name: site
         label: EMMM Website Content
         file: site-content.json
-        fields:
+       fields:
         - label: "🏠 Announcement Headline"
           name: announcement
           widget: string
@@ -39,9 +39,9 @@ collections:
           required: false
 
         - label: "🎵 Music Releases"
-            name: releases
-            widget: list
-            fields:
+          name: releases
+          widget: list
+          fields:
               - {label: Title, name: title, widget: string}
               - {label: Year, name: year, widget: string, required: false}
               - {label: Artwork, name: image, widget: image, required: false}
