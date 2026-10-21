@@ -116,3 +116,24 @@ exports.handler = async function (event) {
       "Please return to the EMMM admin login page.";
   }
 })();
+ </script>
+</body>
+</html>`;
+
+    return {
+      statusCode: 200,
+      headers: {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-store",
+        "Set-Cookie":
+          "oauth_state=; HttpOnly; Secure; SameSite=Lax; Path=/; Max-Age=0"
+      },
+      body: html
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: "Unable to complete GitHub authentication."
+    };
+  }
+};
