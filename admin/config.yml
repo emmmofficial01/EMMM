@@ -12,70 +12,160 @@ publish: true
 
 collections:
   - name: content
-    label: Website Management
+    label: "Website Management"
     files:
       - name: site
-        label: EMMM Website Content
-        file: site-content.json
+        label: "EMMM Website Content"
+        file: "site-content.json"
         fields:
-        - label: "🏠 Announcement Headline"
-          name: announcement
-          widget: string
 
-        - label: "🎟️ Announcement Ticket Link"
-          name: announcementLink
-          widget: string
-          required: false
+          # ==================================
+          # HOMEPAGE
+          # ==================================
 
-        - label: "⏳ Countdown Event Name"
-          name: countdownTitle
-          widget: string
-          required: false
+          - label: "🏠 Announcement Headline"
+            name: announcement
+            widget: string
+            required: false
 
-        - label: "📅 Countdown Date and Time"
-          name: countdownDate
-          widget: datetime
-          required: false
+          - label: "🎟️ Announcement Ticket Link"
+            name: announcementLink
+            widget: string
+            required: false
 
-        - label: "🎵 Music Releases"
-          name: releases
-          widget: list
-          fields:
-              - {label: Title, name: title, widget: string}
-              - {label: Year, name: year, widget: string, required: false}
-              - {label: Artwork, name: image, widget: image, required: false}
-              - {label: Spotify URL, name: spotify, widget: string, required: false}
-              - {label: Apple Music URL, name: apple, widget: string, required: false}
-              - {label: YouTube URL, name: youtube, widget: string, required: false}
+          # ==================================
+          # EVENT COUNTDOWN
+          # ==================================
+
+          - label: "⏳ Countdown Event Name"
+            name: countdownTitle
+            widget: string
+            required: false
+
+          - label: "📅 Countdown Date and Time"
+            name: countdownDate
+            widget: datetime
+            required: false
+
+          # ==================================
+          # MUSIC RELEASES
+          # ==================================
+
+          - label: "🎵 Music Releases"
+            name: releases
+            widget: list
+            required: false
+            fields:
+
+              - label: "Song or Album Title"
+                name: title
+                widget: string
+
+              - label: "Release Year"
+                name: year
+                widget: string
+                required: false
+
+              - label: "Cover Artwork"
+                name: image
+                widget: image
+                required: false
+
+              - label: "Spotify URL"
+                name: spotify
+                widget: string
+                required: false
+
+              - label: "Apple Music URL"
+                name: apple
+                widget: string
+                required: false
+
+              - label: "YouTube URL"
+                name: youtube
+                widget: string
+                required: false
+
+          # ==================================
+          # UPCOMING EVENTS
+          # ==================================
 
           - label: "🎤 Upcoming Events"
             name: events
             widget: list
+            required: false
             fields:
-              - {label: Title, name: title, widget: string}
-              - {label: Date, name: date, widget: string}
-              - {label: Venue, name: venue, widget: string, required: false}
-              - {label: Flyer, name: image, widget: image, required: false}
-              - {label: Ticket URL, name: url, widget: string, required: false}
 
-          - label: "🎙️ EMMM'S CRIB Episodes"
+              - label: "Event Title"
+                name: title
+                widget: string
+
+              - label: "Event Date"
+                name: date
+                widget: string
+
+              - label: "Venue"
+                name: venue
+                widget: string
+                required: false
+
+              - label: "Event Flyer"
+                name: image
+                widget: image
+                required: false
+
+              - label: "Ticket URL"
+                name: url
+                widget: string
+                required: false
+
+          # ==================================
+          # EMMM'S CRIB EPISODES
+          # ==================================
+
+          - label: "🎙️ EMMM's Crib Episodes"
             name: episodes
             widget: list
+            required: false
             fields:
-              - {label: Title, name: title, widget: string}
-              - {label: Artists, name: artists, widget: text}
-              - {label: Flyer, name: image, widget: image, required: false}
 
-          - label: "📰 News & Press"
+              - label: "Episode Title"
+                name: title
+                widget: string
+
+              - label: "Featured Artists"
+                name: artists
+                widget: text
+                required: false
+
+              - label: "Episode Flyer"
+                name: image
+                widget: image
+                required: false
+
+          # ==================================
+          # PUBLISHED NEWS
+          # ==================================
+
+          - label: "📰 Published News"
             name: news
             widget: list
+            required: false
             fields:
-              - label: Brand
+
+              - label: "Brand"
                 name: brand
                 widget: select
                 options:
-                  - EMMM
-                  - EMMMPIRE
+                  - "EMMM"
+                  - "EMMMPIRE"
                   - "EMMM'S CRIB"
-              - {label: Headline, name: title, widget: string}
-              - {label: Source URL, name: url, widget: string, required: false}
+
+              - label: "News Headline"
+                name: title
+                widget: string
+
+              - label: "Source URL"
+                name: url
+                widget: string
+                required: false
