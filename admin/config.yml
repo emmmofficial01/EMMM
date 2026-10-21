@@ -4,6 +4,8 @@ backend:
   name: github
   repo: emmmofficial01/EMMM
   branch: main
+  base_url: https://exquisite-cobbler-e86b3e.netlify.app
+  auth_endpoint: /.netlify/functions/auth
 media_folder: assets/uploads
 public_folder: /assets/uploads
 publish: true
