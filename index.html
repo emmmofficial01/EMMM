@@ -37,4 +37,44 @@
   render();
   const interval = setInterval(() => { render(); if (Date.now() >= eventTime) clearInterval(interval); }, 1000);
 })();
+</script><script id="emmm-cms-homepage-photo">
+(function () {
+  async function updateHomepagePhoto() {
+    const hero = document.querySelector('.hero-img img');
+    if (!hero) return;
+    try {
+      const response = await fetch('/website-photos.json', { cache: 'no-store' });
+      if (!response.ok) throw new Error('Photo data unavailable: ' + response.status);
+      const data = await response.json();
+      const photos = Array.isArray(data.photos) ? data.photos : [];
+      const photo = photos.find(item =>
+        item && String(item.section || '').trim().toLowerCase() === 'homepage' &&
+        typeof item.image === 'string' && item.image.trim()
+      );
+      if (!photo) return; // Keep the existing portrait until a Homepage photo is published.
+      const raw = photo.image.trim();
+      // Decap CMS stores paths like /assets/uploads/photo.jpg or assets/uploads/photo.jpg.
+      // Preserve absolute external URLs while resolving local media from the site root.
+      const url = /^(https?:)?\/\//i.test(raw) ? raw : '/' + raw.replace(/^\/+/, '');
+      const x = Math.min(100, Math.max(0, Number(photo.positionX ?? 50)));
+      const y = Math.min(100, Math.max(0, Number(photo.positionY ?? 50)));
+      const candidate = new Image();
+      candidate.onload = function () {
+        hero.src = url;
+        hero.style.objectPosition = x + '% ' + y + '%';
+        hero.style.setProperty('object-position', x + '% ' + y + '%', 'important');
+        if (photo.description) hero.alt = String(photo.description);
+      };
+      candidate.onerror = function () { console.warn('EMMM homepage photo could not load:', url); };
+      candidate.src = url;
+    } catch (error) {
+      console.warn('EMMM photo dashboard is not available yet; showing default photo.', error);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateHomepagePhoto);
+  } else {
+    updateHomepagePhoto();
+  }
+})();
 </script></body></html>
