@@ -2,10 +2,11 @@
   "photos": [
     {
       "positionX": 50,
-      "positionY": 50,
+      "positionY": 33,
       "title": "EMMM Homepage Photo",
       "image": "/assets/uploads/whatsapp-image-2026-10-18-at-1.43.13-am.jpeg",
-      "section": "Homepage"
+      "section": "Homepage",
+      "description": "Official EMMM homepage photo"
     }
   ]
 }
