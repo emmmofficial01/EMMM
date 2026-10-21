@@ -14,16 +14,19 @@ collections:
   - name: content
     label: "Website Management"
     files:
+
+      # ==========================================
+      # MAIN WEBSITE CONTENT
+      # ==========================================
+
       - name: site
-        label: "EMMM Website Content"
+        label: "🏠 EMMM Website Content"
         file: "site-content.json"
         fields:
 
-          # ==================================
-          # HOMEPAGE
-          # ==================================
+          # HOMEPAGE ANNOUNCEMENTS
 
-          - label: "🏠 Announcement Headline"
+          - label: "📢 Announcement Headline"
             name: announcement
             widget: string
             required: false
@@ -33,9 +36,7 @@ collections:
             widget: string
             required: false
 
-          # ==================================
           # EVENT COUNTDOWN
-          # ==================================
 
           - label: "⏳ Countdown Event Name"
             name: countdownTitle
@@ -47,16 +48,13 @@ collections:
             widget: datetime
             required: false
 
-          # ==================================
           # MUSIC RELEASES
-          # ==================================
 
           - label: "🎵 Music Releases"
             name: releases
             widget: list
             required: false
             fields:
-
               - label: "Song or Album Title"
                 name: title
                 widget: string
@@ -86,16 +84,13 @@ collections:
                 widget: string
                 required: false
 
-          # ==================================
           # UPCOMING EVENTS
-          # ==================================
 
           - label: "🎤 Upcoming Events"
             name: events
             widget: list
             required: false
             fields:
-
               - label: "Event Title"
                 name: title
                 widget: string
@@ -119,16 +114,13 @@ collections:
                 widget: string
                 required: false
 
-          # ==================================
           # EMMM'S CRIB EPISODES
-          # ==================================
 
           - label: "🎙️ EMMM's Crib Episodes"
             name: episodes
             widget: list
             required: false
             fields:
-
               - label: "Episode Title"
                 name: title
                 widget: string
@@ -143,16 +135,13 @@ collections:
                 widget: image
                 required: false
 
-          # ==================================
           # PUBLISHED NEWS
-          # ==================================
 
           - label: "📰 Published News"
             name: news
             widget: list
             required: false
             fields:
-
               - label: "Brand"
                 name: brand
                 widget: select
@@ -168,4 +157,61 @@ collections:
               - label: "Source URL"
                 name: url
                 widget: string
+                required: false
+
+      # ==========================================
+      # PHOTO MANAGEMENT DASHBOARD
+      # ==========================================
+
+      - name: photos
+        label: "📸 Website Photos"
+        file: "website-photos.json"
+        fields:
+
+          - label: "Website Photo Gallery"
+            name: photos
+            widget: list
+            required: false
+            summary: "{{fields.title}}"
+            fields:
+
+              - label: "Photo Name"
+                name: title
+                widget: string
+
+              - label: "Upload or Replace Photo"
+                name: image
+                widget: image
+
+              - label: "Website Section"
+                name: section
+                widget: select
+                options:
+                  - "Homepage"
+                  - "About"
+                  - "Performances"
+                  - "EMMMPIRE"
+                  - "EMMM's Crib"
+                  - "Gallery"
+                  - "Music"
+
+              - label: "Horizontal Photo Position (%)"
+                name: positionX
+                widget: number
+                default: 50
+                value_type: int
+                min: 0
+                max: 100
+
+              - label: "Vertical Photo Position (%)"
+                name: positionY
+                widget: number
+                default: 50
+                value_type: int
+                min: 0
+                max: 100
+
+              - label: "Photo Description"
+                name: description
+                widget: text
                 required: false
