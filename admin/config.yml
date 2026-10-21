@@ -1,25 +1,36 @@
-# Set up GitHub OAuth for Decap CMS before using the admin dashboard.
-# Replace YOUR_GITHUB_USERNAME and configure an OAuth backend.
 backend:
   name: github
-  repo: emmmofficial01/EMMM
+  repo: emmnofficial01/EMMM
   branch: main
   base_url: https://exquisite-cobbler-e86b3e.netlify.app
   auth_endpoint: /.netlify/functions/auth
+
 media_folder: assets/uploads
 public_folder: /assets/uploads
+
 publish: true
+
 collections:
   - name: content
-    label: Website content
+    label: Website Management
     files:
+
       - name: site
-        label: Music, events, announcements, news and episodes
+        label: EMMM Website Content
         file: site-content.json
         fields:
-          - {label: Announcement headline, name: announcement, widget: string}
-          - {label: Announcement link, name: announcementLink, widget: string, required: false}
-          - label: Music releases
+
+          - label: "🏠 Homepage"
+            name: homepage
+            widget: object
+            collapsed: false
+            fields:
+              - {label: Announcement headline, name: announcement, widget: string}
+              - {label: Announcement link, name: announcementLink, widget: string, required: false}
+              - {label: Countdown event name, name: countdownTitle, widget: string, required: false}
+              - {label: Countdown date and time, name: countdownDate, widget: datetime, required: false}
+
+          - label: "🎵 Music Releases"
             name: releases
             widget: list
             fields:
@@ -29,7 +40,8 @@ collections:
               - {label: Spotify URL, name: spotify, widget: string, required: false}
               - {label: Apple Music URL, name: apple, widget: string, required: false}
               - {label: YouTube URL, name: youtube, widget: string, required: false}
-          - label: Upcoming events
+
+          - label: "🎤 Upcoming Events"
             name: events
             widget: list
             fields:
@@ -38,17 +50,25 @@ collections:
               - {label: Venue, name: venue, widget: string, required: false}
               - {label: Flyer, name: image, widget: image, required: false}
               - {label: Ticket URL, name: url, widget: string, required: false}
-          - label: Crib episodes
+
+          - label: "🎙️ EMMM'S CRIB Episodes"
             name: episodes
             widget: list
             fields:
               - {label: Title, name: title, widget: string}
               - {label: Artists, name: artists, widget: text}
               - {label: Flyer, name: image, widget: image, required: false}
-          - label: Published news
+
+          - label: "📰 News & Press"
             name: news
             widget: list
             fields:
-              - {label: Brand, name: brand, widget: select, options: [EMMM, EMMMPIRE, "EMMM'S CRIB"]}
+              - label: Brand
+                name: brand
+                widget: select
+                options:
+                  - EMMM
+                  - EMMMPIRE
+                  - "EMMM'S CRIB"
               - {label: Headline, name: title, widget: string}
               - {label: Source URL, name: url, widget: string, required: false}
