@@ -83,38 +83,36 @@ exports.handler = async function (event) {
   <p>Completing GitHub login...</p>
   <script>
     (function () {
-      const message = ${JSON.stringify("authorization:github:success:")} +
-        ${JSON.stringify(message)};
+  const message = ${JSON.stringify(message)};
 
-      if (window.opener) {
-        window.opener.postMessage(
-          message,
-          window.location.origin
-        );
+  function receiveMessage(event) {
+    if (event.origin !== window.location.origin) {
+      return;
+    }
+
+    if (event.data === "authorizing:github") {
+      window.opener.postMessage(
+        "authorization:github:success:" + message,
+        window.location.origin
+      );
+
+      window.removeEventListener("message", receiveMessage);
+
+      setTimeout(function () {
         window.close();
-      } else {
-        document.body.textContent =
-          "Please return to the EMMM admin login page.";
-      }
-    })();
-  </script>
-</body>
-</html>`;
-
-    return {
-      statusCode: 200,
-      headers: {
-        "Content-Type": "text/html; charset=utf-8",
-        "Cache-Control": "no-store",
-        "Set-Cookie":
-          "oauth_state=; HttpOnly; Secure; SameSite=Lax; Path=/; Max-Age=0"
-      },
-      body: html
-    };
-  } catch (error) {
-    return {
-      statusCode: 500,
-      body: "Unable to complete GitHub authentication."
-    };
+      }, 500);
+    }
   }
-};
+
+  if (window.opener) {
+    window.addEventListener("message", receiveMessage);
+
+    window.opener.postMessage(
+      "authorizing:github",
+      window.location.origin
+    );
+  } else {
+    document.body.textContent =
+      "Please return to the EMMM admin login page.";
+  }
+})();
