@@ -2,7 +2,7 @@
 # Replace YOUR_GITHUB_USERNAME and configure an OAuth backend.
 backend:
   name: github
-  repo: emmmofficial01/emmm-official-website
+  repo: emmmofficial01/EMMM
   branch: main
 media_folder: assets/uploads
 public_folder: /assets/uploads
