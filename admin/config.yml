@@ -19,18 +19,26 @@ collections:
         label: EMMM Website Content
         file: site-content.json
         fields:
+        - label: "🏠 Announcement Headline"
+          name: announcement
+          widget: string
 
-          - label: "🏠 Homepage"
-            name: homepage
-            widget: object
-            collapsed: false
-            fields:
-              - {label: Announcement headline, name: announcement, widget: string}
-              - {label: Announcement link, name: announcementLink, widget: string, required: false}
-              - {label: Countdown event name, name: countdownTitle, widget: string, required: false}
-              - {label: Countdown date and time, name: countdownDate, widget: datetime, required: false}
+        - label: "🎟️ Announcement Ticket Link"
+          name: announcementLink
+          widget: string
+          required: false
 
-          - label: "🎵 Music Releases"
+        - label: "⏳ Countdown Event Name"
+          name: countdownTitle
+          widget: string
+          required: false
+
+        - label: "📅 Countdown Date and Time"
+          name: countdownDate
+          widget: datetime
+          required: false
+
+        - label: "🎵 Music Releases"
             name: releases
             widget: list
             fields:
