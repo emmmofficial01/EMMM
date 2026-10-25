@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://exquisite-cobbler-e86b3e.netlify.app/sitemap.xml
